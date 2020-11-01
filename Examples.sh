@@ -1,0 +1,109 @@
+#!/bin/sh
+
+# 2020-10-31
+
+
+# Global Regular Expression Print
+# grep [-OPTION] pattern [FILE]
+# -i ignore case
+# -o only matching, one line per match
+# -v invert match
+# -n print line number
+# -c line count
+# -A print # of lines after
+# -B print # of lines before
+
+# Examples:
+# grep one *
+# grep -i 'one.*ten' cust*
+# grep -i 'two' cust*
+# grep -i $'\x65' *.txt # search for hex value
+# grep '[a-zA-Z0-9 ]' *
+# grep '[^a-zA-Z0-9 ]' *
+# grep -B 2 -A 2 '5' *.dat # print lines before and after
+# grep -c z * # line count
+# grep -o x * | wc -l # total matches count
+
+
+# Word Count
+# wc [-OPTION] [FILE]
+# -c byte count
+# -m character count
+# -l line count
+# -w word count
+
+# Examples:
+# grep -o x * | wc -l # total matches count
+# wc customer.txt # count lines, words, and characters
+
+
+# File hex values
+# xxd [-OPTION] [INFILE] [OUTFILE]
+
+# Examples:
+# xxd customers.txt
+# xxd customers.txt hexdump.txt
+
+
+# List
+# ls [-OPTION] [FILE]
+
+# Examples:
+# ls 
+# ls c*
+# ls *txt
+
+
+# Find
+# find [-OPTION] [FILE]
+# -maxdepth
+# -exec
+# -newermt # modified after timestamp
+# -mmin # modified +/- n minutes
+# -mtime # modified +/- n days
+# -iname # ignore case
+# -size 
+
+# Examples:
+# find *
+# find * -maxdepth 1
+# find c*
+# find *.txt
+# find *.txt -newermt '01/20/2020 15:12:00' 
+# find * -mtime -7
+# find * -mmin -15
+# find * -exec grep 'on' {} \;
+# find * -size -100b
+# find * -size +100b
+
+
+# Array Variable - No space around =
+# myvar=(one two three four five)
+# myvar=$(ls)
+# echo ${myvar[*]}
+
+
+# Copy Files
+# cp [-OPTION] [FILE] [DESTINATION]
+# -P preserve attributes
+# -r copy sub-directories
+
+# Examples
+# cp customers.txt customers2.txt
+# cp customers.txt ~/docs/customers2.txt
+# cp customers.txt ~/docs/
+# cp customers.txt items.txt ~/docs/
+# cp * backup/
+# myfiles=$(find *)
+# cp ${myfiles[*]} backup/
+# find * -exec cp {} backup/ \;
+
+
+# Remove File
+# rm [-OPTION] [FILE]
+# -r remove sub-directories
+
+# Examples
+# rm customers.txt
+# rm docs/*
+# rm -r docs/*
