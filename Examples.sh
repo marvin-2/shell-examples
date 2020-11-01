@@ -107,3 +107,21 @@
 # rm customers.txt
 # rm docs/*
 # rm -r docs/*
+
+
+# Using vi as a hex editor
+# 1. open the file using the -b option. This turns off any automatic formatting. For example: vi -b data
+# 2. convert the binary data into hex format by entering :%!xxd
+# 3. do the required edits (move around using the cursor keys, start inserting characters with the i key, leave inserting with the ESC key, delete characters with the x key)
+# 4. convert the hex data back to binary by entering :%!xxd -r
+# 5. write back your data by entering :w followed by :q or leave without writing the data by entering :q!
+
+
+# Stream Editor
+# sed [-OPTION] [EXPRESSION] [FILE]
+
+# Examples
+# sed 's/a/e/g' customers.txt # substitute a with e
+# sed 's/a/e/g' customers.txt > customers2.txt
+# sed 's/\x00/n/g' customers.txt # substitute hex null with n. Encoding CCSID matters
+# sed 's/[^a-zA-Z0-9]/ /g' customers.txt # substitute values that are not in set, with a space
