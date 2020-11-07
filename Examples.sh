@@ -127,3 +127,4 @@
 # sed 's/[^a-zA-Z0-9]/ /g' customers.txt # substitute values that are not in set, with a space
 # sed 's/ñ/n/' test.txt
 # sed 's/[àâãäå]/a/g' test.txt | sed 's/ñ/n/g' | sed 's/ç/c/g' | sed 's/[èéêë]/e/g' | sed 's/ìíîï/i/g' | sed 's/[òóôõö]/o/g' | sed 's/[ùúûü]/u/g' | sed 's/[ýÿ]/y/g'
+# sed -e 's/[àâãäå]/a/g' -e sed 's/ñ/n/g' -e sed 's/ç/c/g' -e sed 's/[èéêë]/e/g' -e sed 's/ìíîï/i/g' -e sed 's/[òóôõö]/o/g' -e sed 's/[ùúûü]/u/g' -e sed 's/[ýÿ]/y/g' test.txt
