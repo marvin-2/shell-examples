@@ -125,3 +125,5 @@
 # sed 's/a/e/g' customers.txt > customers2.txt
 # sed 's/\x00/n/g' customers.txt # substitute hex null with n. Encoding CCSID matters
 # sed 's/[^a-zA-Z0-9]/ /g' customers.txt # substitute values that are not in set, with a space
+# sed 's/ñ/n/' test.txt
+# sed 's/[àâãäå]/a/g' test.txt | sed 's/ñ/n/g' | sed 's/ç/c/g' | sed 's/[èéêë]/e/g' | sed 's/ìíîï/i/g' | sed 's/[òóôõö]/o/g' | sed 's/[ùúûü]/u/g' | sed 's/[ýÿ]/y/g'
