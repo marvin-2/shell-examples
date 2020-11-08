@@ -129,3 +129,12 @@
 # sed 's/[àâãäå]/a/g' test.txt | sed 's/ñ/n/g' | sed 's/ç/c/g' | sed 's/[èéêë]/e/g' | sed 's/ìíîï/i/g' | sed 's/[òóôõö]/o/g' | sed 's/[ùúûü]/u/g' | sed 's/[ýÿ]/y/g'
 # sed -e 's/[àâãäå]/a/g' -e sed 's/ñ/n/g' -e sed 's/ç/c/g' -e sed 's/[èéêë]/e/g' -e sed 's/ìíîï/i/g' -e sed 's/[òóôõö]/o/g' -e sed 's/[ùúûü]/u/g' -e sed 's/[ýÿ]/y/g' test.txt
 # xxd -p test4.txt | sed 's/d090d0bdd0/41/' | xxd -p -r
+
+
+# Internationalization Conversion
+# iconv [-OPTIONS] -f [CCSID] -t [CCSID] [FILE]
+
+# Examples
+# iconv --unicode-subst=NULL -f UTF-8 -t cp1252 test4.txt 
+# iconv --unicode-subst=NULL -f UTF-8 -t cp1252 test4.txt | tr -d "NULL"
+# iconv --unicode-subst=NULL -f UTF-8 -t cp1252//TRANSLIT test4.txt 
