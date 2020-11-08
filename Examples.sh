@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# 2020-10-31
+# Original Creation: 2020-10-31
 
 
 # Global Regular Expression Print
@@ -39,6 +39,8 @@
 
 # File hex values
 # xxd [-OPTION] [INFILE] [OUTFILE]
+# -p hex data only
+# -r reverse (from hex to character)
 
 # Examples:
 # xxd customers.txt
@@ -133,8 +135,11 @@
 
 # Internationalization Conversion
 # iconv [-OPTIONS] -f [CCSID] -t [CCSID] [FILE]
+# -c discard unconvertible characters
+# --unicode-subst substitute unconvertible characters with given value
 
 # Examples
 # iconv --unicode-subst=NULL -f UTF-8 -t cp1252 test4.txt 
 # iconv --unicode-subst=NULL -f UTF-8 -t cp1252 test4.txt | tr -d "NULL"
 # iconv --unicode-subst=NULL -f UTF-8 -t cp1252//TRANSLIT test4.txt 
+# iconv -c -f UTF-8 -t cp1252 test4.txt 
