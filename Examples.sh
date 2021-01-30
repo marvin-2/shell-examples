@@ -2,7 +2,7 @@
 
 # Original Creation: 2020-10-31
 
-
+  
 # Global Regular Expression Print
 # grep [-OPTION] pattern [FILE]
 # -i ignore case
